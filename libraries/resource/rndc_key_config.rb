@@ -27,7 +27,7 @@ class ChefNsdResource
           rndc_keys_data_bag,
           rndc_keys_data_bag_item,
         )
-        new_resource.rndc_key_names.sort.each do |k|
+        rndc_key_names.sort.each do |k|
           rndc_keys << {
             'name' => k,
             'secret' => keys_resource.get_or_create(k, SecureRandom.base64)
