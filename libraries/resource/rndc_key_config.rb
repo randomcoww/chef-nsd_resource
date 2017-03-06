@@ -13,7 +13,7 @@ class ChefNsdResource
 
       property :rndc_keys_data_bag, String
       property :rndc_keys_data_bag_item, String
-      property :rndc_key_names, Array
+      property :rndc_key_names, Array, default: []
       property :key_options, Hash, default: {}
 
       property :content, String, default: lazy { to_conf }
