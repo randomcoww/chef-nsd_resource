@@ -35,7 +35,7 @@ class ChefNsdResource
           }.merge(key_options)
         end
 
-        generate_config(rndc_keys)
+        generate_config({'zone' => rndc_keys})
       end
     end
   end
