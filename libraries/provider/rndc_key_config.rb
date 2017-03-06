@@ -34,6 +34,7 @@ class ChefNsdResource
       def key_config
         @unbound_config ||= Chef::Resource::File.new(new_resource.path, run_context).tap do |r|
           r.path new_resource.path
+          r.sensitive true
           r.content new_resource.content
         end
       end
