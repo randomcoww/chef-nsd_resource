@@ -40,24 +40,25 @@ module ConfigGenerator
   end
 
   def parse_config_object(out, k, v, prefix)
-    if v.is_a?(Hash)
+    case v
+    when Hash
       out << [prefix, k, ':'].join
       v.each do |e, f|
         parse_config_object(out, e, f, prefix + '  ')
       end
 
-    elsif v.is_a?(Array)
+    when Array
       v.each do |e|
         parse_config_object(out, k, e, prefix)
       end
 
-    elsif v.is_a?(String) || v.is_a?(Integer)
+    when String,Integer
       out << [prefix, k, ': ', v].join
 
-    elsif v.is_a?(TrueClass)
+    when TrueClass
       out << [prefix, k, ': ', 'yes'].join
 
-    elsif v.is_a?(FalseClass)
+    when FalseClass
       out << [prefix, k, ': ', 'no'].join
     end
   end
