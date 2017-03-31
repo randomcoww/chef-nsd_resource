@@ -1,4 +1,4 @@
-module ConfigGenerator
+module NsdConfigGenerator
   ## convert hash to yaml like config that unbound and nsd use
 
   ## sample source config

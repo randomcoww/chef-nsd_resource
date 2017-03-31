@@ -1,7 +1,7 @@
 class ChefNsdResource
   class Resource
     class RndcKeyConfig < Chef::Resource
-      include ConfigGenerator
+      include NsdConfigGenerator
       include Dbag
 
       resource_name :nsd_resource_rndc_key_config
