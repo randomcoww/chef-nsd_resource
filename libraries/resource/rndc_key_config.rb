@@ -1,7 +1,7 @@
 class ChefNsdResource
   class Resource
     class RndcKeyConfig < Chef::Resource
-      include NsdConfigGenerator
+      include NsdHelper
       include Dbag
 
       resource_name :nsd_resource_rndc_key_config
@@ -35,7 +35,7 @@ class ChefNsdResource
           }.merge(key_options)
         end
 
-        generate_config({'key' => rndc_keys})
+        NsdHelper.generate_from_hash({'key' => rndc_keys})
       end
     end
   end

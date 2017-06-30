@@ -1,4 +1,4 @@
-module NsdConfigGenerator
+module NsdHelper
   ## convert hash to yaml like config that unbound and nsd use
 
   ## sample source config
@@ -30,11 +30,12 @@ module NsdConfigGenerator
   #   ]
   # }
 
-  def generate_config(config_hash)
+  def self.generate_from_hash(config_hash)
+    g = new
     out = []
 
     config_hash.each do |k, v|
-      parse_config_object(out, k, v, '')
+      g.parse_config_object(out, k, v, '')
     end
     return out.join($/)
   end
