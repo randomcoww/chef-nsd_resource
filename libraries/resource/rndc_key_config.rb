@@ -35,7 +35,7 @@ class ChefNsdResource
           }.merge(key_options)
         end
 
-        NsdHelper.generate_from_hash({'key' => rndc_keys})
+        ConfigGenerator.generate_from_hash({'key' => rndc_keys})
       end
     end
   end
